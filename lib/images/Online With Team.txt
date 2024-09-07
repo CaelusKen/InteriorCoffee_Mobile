@@ -1,0 +1,95 @@
+A. Cách commit trên GitHub
+
+	1. Tạo 1 sub-branch với cú pháp: sub-<Tên Feature>-<MSSV>, pull nhánh main về nhánh sub tương ứng
+
+	2. Sẽ có 1 sub branch mang tên testing-area để khi mọi người muốn test feature mọi người sẽ đẩy lên đó và test thử phần của mình
+
+	=> Khi đẩy lên, đi kèm cú pháp Commit: "CM01T-<Tên Feature>-<MSSV>", trong đó CM là "Commit", 01 là đại diện cho commit số 1, <Tên Feature> là tên của Feature đó, <MSSV> là MSSV của mọi người
+
+	3. Sau khi test xong, có thể tạo Pull Request để các thành viên góp ý trước khi finalize phần đó và đẩy lên main
+
+	=> Cú pháp tạo Pull Request: "PRQ01-<Tên Feature>-<MSSV>: <Việc mng đã làm trong nhánh> (Tóm tắt ngắn gọn, không quá 50 từ bằng Tiếng Anh)"
+
+		Lưu ý 01: MỘT KHI ĐÃ ĐẨY LÊN MAIN SẼ KHÔNG ĐƯỢC REVERT LẠI
+
+		Lưu ý 02: SAU KHI HOÀN THÀNH VIỆC MERGE VÀO MAIN, NHÁNH SUB ĐÓ SẼ ĐƯỢC TỰ ĐỘNG XÓA.
+
+	Github Structure:
+
+	main (default)
+	|
+	|
+	|
+	|___	testing-area (Nhánh test để test các feature/function mà mng đã code) (sẽ pull từ main) => Pre-test
+	|
+	|
+	|__________sub-<Tên Feature>-<MSSV> (sẽ pull từ Testing)
+	|
+	|
+	|__________sub-<Tên Feature>-<MSSV> (sẽ pull từ Testing)
+
+B. Database Setup
+
+	- Code First (Preference của giảng viên: MSSQL, tuy nhiên, cô Hương khuyến khích sử dụng NoSQL cho đề tài của mình)
+
+	- Chuẩn bị tâm thế DB sẽ bị xoay (như chong chóng)
+
+C. Upcoming Tasks
+
+	1. Backend
+
+		- Nếu GitHub lỗi không đụng được => sau 2/9 sẽ có repo mới (empty)
+
+			+ Setup MongoDB, và setup kiến trúc (Repository, chuẩn chỉ SGK)
+
+		- Tập trung code API cho: Authentication (tăng security lên, nghiên cứu CAPTCHA hoặc reCAPTCHA), CRUD các entities (Product)
+
+	2. Frontend
+
+		- Lưu ý: sử dụng Cookies, Session và Local Storage cho hợp lý với mục đích của chúng (chiếm 10% điểm)
+
+		- Tập trung làm những trang chưa đụng tới Simulation (Flow E-commerce)
+
+			+ Tuần Official: (UI chiếm 30% điểm)
+
+				* Login, Signup, Forgot Password => Authentication (tăng security lên, nghiên cứu CAPTCHA hoặc reCAPTCHA)
+
+				* Landing Page, Product Home Page, Product List Page, Product Details Page => Browse Product
+
+			=> Xong task, update và interchange tùy cơ ứng biến
+
+	3. Mobile
+
+		- Tập trung làm những trang chưa đụng tới Simulation (Flow E-commerce)
+
+			+ Tuần Official: (làm xong 1 trong 2 phần dưới đây)
+
+				* Login, Signup, Forgot Password => Authentication (tăng security lên, nghiên cứu CAPTCHA hoặc reCAPTCHA)
+
+				* Product Home Page, Product List Page, Product Details Page => Browse Product
+
+			=> Xong task, update và interchange tùy cơ ứng biến
+
+	4. Chú ý tổng:
+
+		- Đội hình: 2 Backend, 2 Frontend, 1 Mobile, 1 Doc (Leader). Vai trò của ai người đó tự làm nhưng có thể nhờ sự hỗ trợ của mọi người
+
+		- Deadline thường tuần của mọi người, trước 23h thứ 7 của tuần. Được phép dời về Chủ Nhật nếu như Leader approve lý do của mọi người
+
+		- THƯỜNG XUYÊN CẬP NHẬT TIẾN ĐỘ CÔNG VIỆC TRÊN SHEET ĐÃ ĐƯỢC GỬI VỀ TRÊN DISCORD. CẬP NHẬT TIẾN ĐỘ THEO TUẦN TRƯỚC NGÀY DEADLINE 1 NGÀY.
+
+		- Lịch meet của mọi người
+
+			+ Offline: Thứ 7
+
+			+ Online:
+
+				* Dạng Online Chill (Dành cho các đồng chí muốn code chung hoặc là muốn chill): Everyday từ 20h
+
+				* Dạng Test feature/function: Theo ngày mà thành viên code đó chốt với leader
+
+					+ Thời gian phù hợp để Test: Slot 2 - 3 hoặc sau 20h 
+
+				* Dạng Meeting Báo cáo tiến độ: Chủ nhật 20h30
+
+		- Meeting với Giảng viên vào Block 10w là Meeting OFFLINE. 
