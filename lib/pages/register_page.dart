@@ -5,12 +5,12 @@ class RegisterPage extends StatelessWidget{
   
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      body: new Stack(
+    return Scaffold(
+      body: Stack(
         children: <Widget>[
-          new Container(
-            decoration: new BoxDecoration(
-              image : new DecorationImage(image: new AssetImage("lib/images/backgroud.jpg"), fit: BoxFit.cover),
+           Container(
+            decoration: BoxDecoration(
+              image : DecorationImage(image: AssetImage("lib/images/backgroud.jpg"), fit: BoxFit.cover),
             ),
           ),
         ],

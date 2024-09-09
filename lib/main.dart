@@ -10,9 +10,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: LoginPage(
-        
-      )
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(fontFamily: 'Outfit'),
+      home: LoginPage(),
     );
   }
 }

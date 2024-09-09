@@ -1,79 +1,74 @@
 import 'package:flutter/material.dart';
+import 'package:interior_coffee/components/login_form.dart';
 import 'package:interior_coffee/components/login_option.dart';
-import 'package:interior_coffee/components/my_button.dart';
-import 'package:interior_coffee/components/my_textfield.dart';
-import 'package:interior_coffee/pages/register_page.dart';
+import 'package:interior_coffee/components/primary_button.dart';
+import 'package:interior_coffee/theme.dart';
 
 class LoginPage extends StatelessWidget {
-  LoginPage({super.key}); // Fixed typo
-
-  //text edit controller
-  final usernameController = TextEditingController();
-  final passwordController = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.brown,
-      body: SafeArea(
+      backgroundColor: Color(0xFF121212),
+      body: Padding(
+        padding: kDefaultPadding,
         child: SingleChildScrollView(
-          child: Center(
-            child: Column(
+          child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: 160,
+            ),
+            Text('Welcome Back', style: titleText),
+            SizedBox(
+              height: 7,
+            ),
+            Row(
               children: [
-                //welcome back
-                const SizedBox(height: 100),
-                Text('Welcome back!\nPlease login below',
-                    style: TextStyle(
-                      color: Colors.amber[50],
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
+                Text('Not a User?', style: subTitle),
+                SizedBox(
+                  width: 5,
+                ),
+                Text('SIGN UP',
+                    style: textButton.copyWith(
+                      decoration: TextDecoration.underline,
+                      decorationColor: Color(0xFFF6F2CB),
+                      decorationThickness: 1,
                     )),
+              ],
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            //login form
+            LoginForm(),
 
-                const SizedBox(height: 50),
-                //username textfiend
-                MyTextField(
-                  controller: usernameController,
-                  hintText: 'Username',
-                  obscureText: false,
-                ),
+            SizedBox(
+              height: 25,
+            ),
+            //Forgot password
+            Text('Forgot password',
+                style: TextStyle(
+                    color: Color(0xFFF6F2CB),
+                    fontSize: 14,
+                    decoration: TextDecoration.underline,
+                    decorationColor: Color(0xFFF6F2CB),
+                    decorationThickness: 1)),
 
-                const SizedBox(height: 25),
-                //password textfield
-                MyTextField(
-                  controller: passwordController,
-                  hintText: 'Password',
-                  obscureText: true,
-                ),
+            SizedBox(height: 40),
+            PrimaryButton(
+              buttonText: 'Sign In',
+            ),
 
-                const SizedBox(height: 15),
-                //forgot password
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Text(
-                        'Forgot password?',
-                        style: TextStyle(color: Colors.grey.shade300),
-                      ),
-                    ],
-                  ),
-                ),
-
-                const SizedBox(height: 25),
-                //sign in button
-                MyButton(),
-
-                const SizedBox(height: 50),
-                //or continue with
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+            SizedBox(height: 40),
+            //Or continue with
+            Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 0),
                   child: Row(
                     children: [
                       Expanded(
                         child: Divider(
                           thickness: 0.5,
-                          color: Colors.amber.shade50,
+                          color: kPrimaryColor
                         ),
                       ),
                       Padding(
@@ -81,29 +76,29 @@ class LoginPage extends StatelessWidget {
                         child: Text(
                           'Or continue with',
                           style: TextStyle(
-                            color: Colors.white,
+                            color: kPrimaryColor
                           ),
                         ),
                       ),
                       Expanded(
                         child: Divider(
                           thickness: 0.5,
-                          color: Colors.amber.shade50,
+                          color: kPrimaryColor
                         ),
                       ),
                     ],
                   ),
                 ),
-
-                const SizedBox(height: 50),
-                //gmail button
-                LoginOption(),
-                //register button
-              ],
-            ),
-          ),
+            
+            SizedBox(height: 30),
+            //login with google
+            LoginOption(),
+          ],
         ),
-      ),
-    );
+        ),
+        )
+      
+        
+      );
   }
 }
