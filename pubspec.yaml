@@ -10,24 +10,24 @@ environment:
 
 #Package
 dependencies:
+  smooth_page_indicator: ^1.2.0+3
+  flutter_native_splash: ^2.4.1
+  build_runner: ^2.4.12
   cupertino_icons: ^1.0.8
-  iconsax: ^0.0.8
   flutter:
     sdk: flutter
-  
-  #utilities 
+  get: ^4.6.6
+  get_storage: ^2.1.1
   http: ^1.2.2
+  iconsax: ^0.0.8
   intl: ^0.19.0
   logger: ^2.4.0
   url_launcher: ^6.3.0
-
-  #state management
-  get: ^4.6.6
-  get_storage: ^2.1.1
-
 #Package end
+flutter_native_splash:
+
 dev_dependencies:
-  flutter_lints: ^3.0.0
+  flutter_lints: ^4.0.0
 
   flutter_test:
     sdk: flutter
@@ -39,7 +39,7 @@ flutter:
   assets:
     - assets/logos/
     - assets/icons/
-    - assets/images/
+    - assets/images/on_boarding_images/
     #Local fonts
   fonts:
     - family: Poppins
