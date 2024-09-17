@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:interior_coffee/features/authentication/screens/login/login.dart';
 
 class OnBoardingController extends GetxController{
   static OnBoardingController get instance => Get.find();
@@ -14,22 +15,25 @@ class OnBoardingController extends GetxController{
   //chon page de navigate
   void dotNavigationClick(index){
     currentPageIndex.value = index;
-    pageController.jumpTo(index);
+    pageController.jumpToPage(index);
   }
 
   //update trang hien tai va scroll den trang tiep
   void nextPage(){
+    print(currentPageIndex.value);
     if(currentPageIndex.value == 2){
-      //Get to login screen
+      Get.offAll(LoginScreen());
     } else {
       int page = currentPageIndex.value + 1;
-      pageController.jumpToPage(page);
+      pageController.animateToPage(
+        page,
+        duration: Duration(milliseconds: 300),
+        curve: Curves.easeInOut);
     }
   }
 
   //update trang hien tai va scroll den trang cuoi
   void skipPage(){
-    currentPageIndex.value = 2;
-    pageController.jumpToPage(2);
+    Get.offAll(LoginScreen());
   }
 }

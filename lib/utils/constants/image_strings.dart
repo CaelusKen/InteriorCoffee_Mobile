@@ -2,8 +2,8 @@ class TImages{
   TImages._();
 
   //app logo
-  static String darkAppLogo = "";
-  static String lightAppLogo = "";
+  static String darkAppLogo = "assets/logos/ic logo light.png";
+  static String lightAppLogo = "assets/logos/ic logo dark.png";
 
   //sign in option logo
   static String google = "assets/logos/google.png";
