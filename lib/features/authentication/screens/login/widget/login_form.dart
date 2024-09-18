@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:interior_coffee/features/authentication/screens/password_configuration/forget_password.dart';
 import 'package:interior_coffee/features/authentication/screens/signup/widgets/signup.dart';
 import 'package:interior_coffee/utils/constants/sizes.dart';
 import 'package:interior_coffee/utils/constants/text_strings.dart';
@@ -37,7 +38,7 @@ class TLoginForm extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              TextButton(onPressed: (){}, child: Text(TTexts.forgetPassword, style: TextStyle(color: Colors.brown))),
+              TextButton(onPressed: () => Get.to(() => ForgotPassword()), child: Text(TTexts.forgetPassword, style: TextStyle(color: Colors.brown))),
           ],
           ),
       
