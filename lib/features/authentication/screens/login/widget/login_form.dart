@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:interior_coffee/features/authentication/screens/password_configuration/forget_password.dart';
 import 'package:interior_coffee/features/authentication/screens/signup/widgets/signup.dart';
+import 'package:interior_coffee/navigation_menu.dart';
 import 'package:interior_coffee/utils/constants/sizes.dart';
 import 'package:interior_coffee/utils/constants/text_strings.dart';
 
@@ -45,7 +46,7 @@ class TLoginForm extends StatelessWidget {
           SizedBox(height: TSizes.spaceBtwSections),
       
           //sign in button
-          SizedBox(width: double.infinity, child: ElevatedButton(onPressed: (){}, child: Text(TTexts.signIn))),
+          SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () => Get.to(() => NavigationMenu()), child: Text(TTexts.signIn))),
           SizedBox(height: TSizes.spaceBtwItems),
     
           //create account
