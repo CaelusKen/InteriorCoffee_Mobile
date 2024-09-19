@@ -40,4 +40,6 @@ class TImages{
 
   //product
   static const String productImage1 = "assets/images/product/productImage1.png";
+  static const String productImage2 = "assets/images/product/productImage2.png";
+  static const String productImage3 = "assets/images/product/productImage3.png";
 }

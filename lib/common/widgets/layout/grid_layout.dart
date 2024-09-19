@@ -4,12 +4,14 @@ import 'package:interior_coffee/utils/constants/sizes.dart';
 class TGridLayout extends StatelessWidget {
   const TGridLayout(
       {super.key,
+      this.backgroundColor = Colors.white,
       required this.itemCount,
       this.mainAxisExtent = 288,
       required this.itemBuilder});
 
   final int itemCount;
   final double? mainAxisExtent;
+  final Color backgroundColor;
   final Widget? Function(BuildContext, int) itemBuilder;
 
   @override
