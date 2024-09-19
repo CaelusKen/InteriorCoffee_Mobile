@@ -4,6 +4,8 @@ import 'package:interior_coffee/common/widgets/custom_shapes/containers/search_c
 import 'package:interior_coffee/common/widgets/text/section_heading.dart';
 import 'package:interior_coffee/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:interior_coffee/features/shop/screens/home/widgets/home_category.dart';
+import 'package:interior_coffee/features/shop/screens/home/widgets/promo_slider.dart';
+import 'package:interior_coffee/utils/constants/image_strings.dart';
 import 'package:interior_coffee/utils/constants/sizes.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -40,6 +42,12 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ],
               ),
+            ),
+
+            //home body
+            Padding(
+              padding: EdgeInsets.all(TSizes.defaultSpace),
+              child: TPromoSlider(banners: [TImages.promoBanner1, TImages.promoBanner2, TImages.promoBanner3]),
             ),
           ],
         ),
