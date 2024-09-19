@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:interior_coffee/utils/constants/colors.dart';
 import 'package:interior_coffee/utils/theme/custom_themes/appbar_theme.dart';
 import 'package:interior_coffee/utils/theme/custom_themes/bottom_sheet_theme.dart';
 import 'package:interior_coffee/utils/theme/custom_themes/checkbox_theme.dart';
@@ -15,11 +16,12 @@ class TAppTheme {
   static ThemeData lightTheme = ThemeData(
     useMaterial3: true,
     fontFamily: 'Poppins',
+    disabledColor: TColors.grey,
     brightness: Brightness.light,
-    primaryColor: Colors.brown,
+    primaryColor: TColors.primary,
     textTheme: TTextTheme.lightTextTheme,
     chipTheme: TChipTheme.lightChipTheme,
-    scaffoldBackgroundColor: Colors.white,
+    scaffoldBackgroundColor: TColors.white,
     appBarTheme: TAppBarTheme.lightAppBarTheme,
     checkboxTheme: TCheckboxTheme.lightCheckboxTheme,
     bottomSheetTheme: TBottomSheetTheme.lightBottomSheetTheme,
@@ -30,13 +32,14 @@ class TAppTheme {
 
   //Dark theme properties
   static ThemeData darkTheme = ThemeData(
+    scaffoldBackgroundColor: TColors.dark,
     useMaterial3: true,
     fontFamily: 'Poppins',
+    disabledColor: TColors.grey,
     brightness: Brightness.dark,
-    primaryColor: Colors.brown,
+    primaryColor: TColors.primary,
     textTheme: TTextTheme.darkTextTheme,
     chipTheme: TChipTheme.darkChipTheme,
-    scaffoldBackgroundColor: Colors.black,
     appBarTheme: TAppBarTheme.darkAppBarTheme,
     checkboxTheme: TCheckboxTheme.darkCheckboxTheme,
     bottomSheetTheme: TBottomSheetTheme.darkBottomSheetTheme,

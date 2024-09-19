@@ -32,4 +32,14 @@ class TImages{
   static const String furnitureIcon = "assets/icons/categories/icons8-dining-chair-64.png";
   static const String jeweleryIcon = "assets/icons/categories/icons8-sparkling-diamond-64.png";
   static const String electronicsIcon = "assets/icons/categories/icons8-smartphone-64.png";
+
+  //banner
+  static const String promoBanner1 = "assets/images/banners/banner-1.jpg";
+  static const String promoBanner2 = "assets/images/banners/banner-2.jpg";
+  static const String promoBanner3 = "assets/images/banners/banner-3.jpg";
+
+  //product
+  static const String productImage1 = "assets/images/product/productImage1.png";
+  static const String productImage2 = "assets/images/product/productImage2.png";
+  static const String productImage3 = "assets/images/product/productImage3.png";
 }
