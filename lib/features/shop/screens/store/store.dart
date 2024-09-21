@@ -64,7 +64,6 @@ class StoreScreen extends StatelessWidget {
                   Tab(child: Text('Sofa')),
                   Tab(child: Text('Table')),
                   Tab(child: Text('Chair')),
-                  Tab(child: Text('Light')),
                 ],
               ),
             ),
@@ -72,7 +71,6 @@ class StoreScreen extends StatelessWidget {
         }, 
         body: TabBarView(
           children: [
-            TCategoryTab(),
             TCategoryTab(),
             TCategoryTab(),
             TCategoryTab(),

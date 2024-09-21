@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:interior_coffee/features/authentication/screens/onboarding/onboarding.dart';
+import 'package:interior_coffee/splashScreen.dart';
 import 'package:interior_coffee/utils/constants/colors.dart';
 import 'package:interior_coffee/utils/theme/custom_themes/appbar_theme.dart';
 import 'package:interior_coffee/utils/theme/custom_themes/bottom_sheet_theme.dart';
@@ -35,7 +35,7 @@ class App extends StatelessWidget {
         outlinedButtonTheme: TOutlinedButton.darkOutlinedButtonTheme,
         inputDecorationTheme: TTextFieldTheme.darkInputDecorationTheme,
       ),
-      home: OnBoardingScreen(),
+      home: SplashScreen(),
     );
   }
 }

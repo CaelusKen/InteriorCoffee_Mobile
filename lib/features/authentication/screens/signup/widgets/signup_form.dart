@@ -33,10 +33,10 @@ class TSignupForm extends StatelessWidget {
         ),
     
         SizedBox(height: TSizes.spaceBtwInputField),
-        //Email
+        //address
         TextFormField(
           expands: false,
-          decoration: InputDecoration(labelText: TTexts.email,prefixIcon: Icon(Iconsax.direct)),
+          decoration: InputDecoration(labelText: 'Address',prefixIcon: Icon(Iconsax.house)),
         ),
     
         SizedBox(height: TSizes.spaceBtwInputField),
@@ -52,7 +52,7 @@ class TSignupForm extends StatelessWidget {
           obscureText: true,
           expands: false,
           decoration: InputDecoration(
-            labelText: TTexts.username,
+            labelText: TTexts.password,
             prefixIcon: Icon(Iconsax.password_check),
             suffixIcon: Icon(Iconsax.eye_slash),
           ),

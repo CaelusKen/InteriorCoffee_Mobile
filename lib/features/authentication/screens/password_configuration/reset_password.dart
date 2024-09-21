@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:interior_coffee/features/authentication/screens/login/login.dart';
 import 'package:interior_coffee/features/authentication/screens/password_configuration/otp_form.dart';
 import 'package:interior_coffee/utils/constants/colors.dart';
 import 'package:interior_coffee/utils/constants/image_strings.dart';
@@ -45,7 +46,7 @@ class ResetPassword extends StatelessWidget {
               //Button
               SizedBox(
                 width: double.infinity,
-                child: ElevatedButton(onPressed: (){}, child: Text(TTexts.tContinue)),
+                child: ElevatedButton(onPressed: () => Get.off(() => LoginScreen()), child: Text(TTexts.tContinue)),
               ),
               SizedBox(height: TSizes.spaceBtwItems),
               SizedBox(

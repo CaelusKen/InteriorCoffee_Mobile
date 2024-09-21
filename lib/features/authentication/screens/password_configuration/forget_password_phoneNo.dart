@@ -1,15 +1,17 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:interior_coffee/features/authentication/screens/password_configuration/forget_password_phoneNo.dart';
+import 'package:interior_coffee/features/authentication/screens/password_configuration/forget_password.dart';
 import 'package:interior_coffee/features/authentication/screens/password_configuration/reset_password.dart';
 import 'package:interior_coffee/utils/constants/colors.dart';
 import 'package:interior_coffee/utils/constants/sizes.dart';
 import 'package:interior_coffee/utils/constants/text_strings.dart';
 import 'package:interior_coffee/utils/helpers/function_helper.dart';
 
-class ForgotPassword extends StatelessWidget {
-  const ForgotPassword({ super.key });
+class ForgetPasswordPhoneNo extends StatelessWidget {
+  const ForgetPasswordPhoneNo({ super.key });
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +35,7 @@ class ForgotPassword extends StatelessWidget {
 
             //text fields
             TextFormField(
-              decoration: InputDecoration(labelText: TTexts.email, prefixIcon: Icon(Iconsax.direct_right)),
+              decoration: InputDecoration(labelText: TTexts.phoneNo, prefixIcon: Icon(Iconsax.call)),
             ),
             SizedBox(height: TSizes.spaceBtwSections),
 
@@ -43,7 +45,7 @@ class ForgotPassword extends StatelessWidget {
             SizedBox(height: TSizes.spaceBtwSections),
             SizedBox(
                 width: double.infinity,
-                child: TextButton(onPressed: () => Get.to(() => ForgetPasswordPhoneNo()), child: Text(TTexts.phoneNumberInstead, style: TextStyle(color: TColors.primary))),
+                child: TextButton(onPressed: () => Get.to(() => ForgotPassword()), child: Text(TTexts.emailInstead, style: TextStyle(color: TColors.primary))),
               ),
           ],
         ),),
