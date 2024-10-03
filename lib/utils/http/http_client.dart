@@ -1,8 +1,9 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-class THttpHelper{
-  static const String _baseUrl = 'api_url';
+class THttpHelper {
+  static const String _baseUrl =
+      'https://interior-coffee-api-f2d9dqd2eyccesfq.southeastasia-01.azurewebsites.net/swagger/v1/swagger.json';
 
   //get request (get list)
   static Future<Map<String, dynamic>> get(String endpoint) async {
@@ -11,10 +12,11 @@ class THttpHelper{
   }
 
   //post request (create)
-  static Future<Map<String, dynamic>> post(String endpoint, dynamic data) async {
+  static Future<Map<String, dynamic>> post(
+      String endpoint, dynamic data) async {
     final response = await http.post(
       Uri.parse('$_baseUrl/$endpoint'),
-      headers: {'Content-Type' : 'application/json'},
+      headers: {'Content-Type': 'application/json'},
       body: json.encode(data),
     );
 
@@ -25,7 +27,7 @@ class THttpHelper{
   static Future<Map<String, dynamic>> put(String endpoint, dynamic data) async {
     final response = await http.put(
       Uri.parse('$_baseUrl/$endpoint'),
-      headers: {'Content-Type' : 'application/json'},
+      headers: {'Content-Type': 'application/json'},
       body: json.encode(data),
     );
 
@@ -39,8 +41,8 @@ class THttpHelper{
   }
 
   //handle response
-  static Map<String, dynamic> _handleResponse(http.Response response){
-    if(response.statusCode == 200){
+  static Map<String, dynamic> _handleResponse(http.Response response) {
+    if (response.statusCode == 200) {
       return json.decode(response.body);
     } else {
       throw Exception('Failed to load data : ${response.statusCode}');

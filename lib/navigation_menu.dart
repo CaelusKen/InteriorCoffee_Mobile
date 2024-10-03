@@ -7,31 +7,32 @@ import 'package:interior_coffee/utils/constants/colors.dart';
 import 'package:interior_coffee/utils/helpers/function_helper.dart';
 
 class NavigationMenu extends StatelessWidget {
-  const NavigationMenu({ super.key });
+  const NavigationMenu({super.key});
 
   @override
   Widget build(BuildContext context) {
-
     final controller = Get.put(NavigationController());
     final darkMode = THelperFunction.isDarkMode(context);
 
     return Scaffold(
       bottomNavigationBar: Obx(
         () => NavigationBar(
-          
           height: 80,
           elevation: 0,
           selectedIndex: controller.selectedIndex.value,
-          onDestinationSelected: (index) => controller.selectedIndex.value = index,
+          onDestinationSelected: (index) =>
+              controller.selectedIndex.value = index,
           backgroundColor: darkMode ? TColors.dark : Colors.white,
-          indicatorColor: darkMode ? TColors.white.withOpacity(0.1) : TColors.black.withOpacity(0.1),
-        
+          indicatorColor: darkMode
+              ? TColors.white.withOpacity(0.1)
+              : TColors.black.withOpacity(0.1),
           destinations: [
-          NavigationDestination(icon: Icon(Iconsax.home), label: 'Home'),
-          NavigationDestination(icon: Icon(Iconsax.shop), label: 'Store'),
-          NavigationDestination(icon: Icon(Iconsax.message), label: 'Message'),
-          NavigationDestination(icon: Icon(Iconsax.user), label: 'Profile'),
-        ],
+            NavigationDestination(icon: Icon(Iconsax.home), label: 'Home'),
+            NavigationDestination(icon: Icon(Iconsax.shop), label: 'Store'),
+            NavigationDestination(
+                icon: Icon(Iconsax.message), label: 'Message'),
+            NavigationDestination(icon: Icon(Iconsax.user), label: 'Profile'),
+          ],
         ),
       ),
       body: Obx(() => controller.screens[controller.selectedIndex.value]),
@@ -39,14 +40,13 @@ class NavigationMenu extends StatelessWidget {
   }
 }
 
-class NavigationController extends GetxController{
+class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
 
   final screens = [
-    HomeScreen(), 
-    StoreScreen(), 
-    Container(color: Colors.orange), 
+    HomeScreen(),
+    StoreScreen(),
+    Container(color: Colors.orange),
     Container(color: Colors.blue),
-    ];
-
+  ];
 }
