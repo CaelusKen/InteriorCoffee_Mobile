@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "842807314099",
+    "project_id": "interiorcoffee-54622",
+    "storage_bucket": "interiorcoffee-54622.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:842807314099:android:44ac6d374b40ca088fd2c6",
+        "android_client_info": {
+          "package_name": "com.example.interior_coffee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "842807314099-75bea72uuad0o5f4ko14ub2gtq2nc060.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.interior_coffee",
+            "certificate_hash": "cf7d700df961c4983ac1146f93462c51ada581ea"
+          }
+        },
+        {
+          "client_id": "842807314099-cgd9ur1lmhtf5mvedbci06us0crd9cp6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGFUSI7O06FT3Rtztpe852xX3kpW92K80"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "842807314099-6a8gi8sajk13q6ii77ddup3a5p61mjpj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "842807314099-gt2sni1btcqlao3s3o9ul7bl8i5q2ek1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.interiorCoffee"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

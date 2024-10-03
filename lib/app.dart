@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:interior_coffee/bindings/general_bidings.dart';
 import 'package:interior_coffee/splashScreen.dart';
 import 'package:interior_coffee/utils/constants/colors.dart';
 import 'package:interior_coffee/utils/theme/custom_themes/appbar_theme.dart';
@@ -35,7 +36,8 @@ class App extends StatelessWidget {
         outlinedButtonTheme: TOutlinedButton.darkOutlinedButtonTheme,
         inputDecorationTheme: TTextFieldTheme.darkInputDecorationTheme,
       ),
-      home: SplashScreen(),
+      initialBinding: GeneralBidings(),
+      home: SplashScreen(), 
     );
   }
 }

@@ -6,7 +6,7 @@ import 'package:interior_coffee/utils/constants/sizes.dart';
 import 'package:interior_coffee/utils/helpers/function_helper.dart';
 
 class TBottomAddToCart extends StatelessWidget {
-  const TBottomAddToCart({ Key? key }) : super(key: key);
+  const TBottomAddToCart({ super.key });
 
   @override
   Widget build(BuildContext context) {

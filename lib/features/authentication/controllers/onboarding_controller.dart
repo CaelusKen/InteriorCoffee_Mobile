@@ -1,5 +1,7 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:interior_coffee/features/authentication/screens/login/login.dart';
 
 class OnBoardingController extends GetxController{
@@ -20,9 +22,20 @@ class OnBoardingController extends GetxController{
 
   //update trang hien tai va scroll den trang tiep
   void nextPage(){
+
     print(currentPageIndex.value);
+
     if(currentPageIndex.value == 2){
+      final storage = GetStorage();
+
+      if(kDebugMode){
+      print('================Get Storage================');
+      print(storage.read('IsFirstTime'));
+    }
+    
+      storage.write('IsFirstTime', false);
       Get.offAll(LoginScreen());
+
     } else {
       int page = currentPageIndex.value + 1;
       pageController.animateToPage(

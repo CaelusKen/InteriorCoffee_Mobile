@@ -14,6 +14,27 @@ class TValidator {
     return null;
   }
 
+  static String? validateFullname(String? value){
+    if(value == null || value.isEmpty){
+      return 'Full name is required';
+    } else if (value.contains(RegExp(r'[0-9]'))){
+      return 'Can not include number';
+    } else if(value.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'))){
+      return 'Can not include special characters';
+    }
+
+    return null;
+  }
+
+  static String? validateEmptyText(String? fieldName, String? value){
+    if(value == null || value.isEmpty){
+      return '$fieldName is required';
+    }
+
+    return null;
+    
+  }
+
   static String? validatePassword(String? value){
     if(value == null || value.isEmpty){
       return 'Password is required';

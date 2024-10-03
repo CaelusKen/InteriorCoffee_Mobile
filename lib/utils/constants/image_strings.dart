@@ -2,8 +2,8 @@ class TImages{
   TImages._();
 
   //app logo
-  static String darkAppLogo = "assets/logos/ic logo light.png";
-  static String lightAppLogo = "assets/logos/ic logo dark.png";
+  static String darkAppLogo = "assets/logos/ic_logo_dark.png";
+  static String lightAppLogo = "assets/logos/ic_logo_light.png";
 
   //sign in option logo
   static String google = "assets/logos/google.png";
@@ -42,4 +42,7 @@ class TImages{
   static const String productImage1 = "assets/images/product/productImage1.png";
   static const String productImage2 = "assets/images/product/productImage2.png";
   static const String productImage3 = "assets/images/product/productImage3.png";
+
+  //animation
+  static const String docerAnimation = "assets/images/animations/141594-animation-of-docer.json";
 }

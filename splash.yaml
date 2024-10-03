@@ -1,14 +1,9 @@
 flutter_native_splash:
-  color : "#FFFFFF"
-  color_dark : "#272727"
-  image : assets/logos/ic logo light.png
-  image_dark : assets/logos/ic logo dark.png
+  image: assets/logos/logo.png
+  color: "#f9f9f9"
 
 android 12:
-  color : "#FFFFFF"
-  color_dark : "#272727"
-  image : assets/logos/ic logo light.png
-  image_dark : assets/logos/ic logo dark.png
+  image: assets/logos/logo.png
+  color: "#f9f9f9"
 
-
-web : false
+web: false
