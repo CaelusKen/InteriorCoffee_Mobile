@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 
 class THttpHelper {
   static const String _baseUrl =
-      'https://interior-coffee-api-f2d9dqd2eyccesfq.southeastasia-01.azurewebsites.net/swagger/v1/swagger.json';
+      'https://interior-coffee-api-f2d9dqd2eyccesfq.southeastasia-01.azurewebsites.net/api/v1/';
 
   //get request (get list)
   static Future<Map<String, dynamic>> get(String endpoint) async {

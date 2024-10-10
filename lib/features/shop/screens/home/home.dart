@@ -27,20 +27,26 @@ class HomeScreen extends StatelessWidget {
                   SizedBox(height: TSizes.spaceBtwItems),
 
                   //Search bar
-                  TSearchContainer(text: 'Search in store',),
+                  TSearchContainer(
+                    text: 'Search in store',
+                  ),
                   SizedBox(height: TSizes.spaceBtwSections),
 
                   //categories slider
-                  Padding(padding: EdgeInsets.only(left: TSizes.defaultSpace), 
-                  child: Column(
-                    children: [
-                      TSectionHeading(title: 'Furniture Types', showActionButton: false, textColor: Colors.white),
-                      SizedBox(height: TSizes.spaceBtwItems),
+                  Padding(
+                    padding: EdgeInsets.only(left: TSizes.defaultSpace),
+                    child: Column(
+                      children: [
+                        TSectionHeading(
+                            title: 'Furniture Types',
+                            showActionButton: false,
+                            textColor: Colors.white),
+                        SizedBox(height: TSizes.spaceBtwItems),
 
-                      //category
-                      THomeCategory(),
-                    ],
-                  ),
+                        //category
+                        THomeCategory(),
+                      ],
+                    ),
                   ),
                 ],
               ),
@@ -49,18 +55,27 @@ class HomeScreen extends StatelessWidget {
             //home body
             Padding(
               padding: EdgeInsets.all(TSizes.defaultSpace),
-              child : Column(
+              child: Column(
                 children: [
                   //promotion slider
-                TPromoSlider(banners: [TImages.promoBanner1, TImages.promoBanner2, TImages.promoBanner3]),
-                SizedBox(height: TSizes.spaceBtwSections),
+                  TPromoSlider(banners: [
+                    TImages.promoBanner1,
+                    TImages.promoBanner2,
+                    TImages.promoBanner3
+                  ]),
+                  SizedBox(height: TSizes.spaceBtwSections),
 
-                //heading
-                TSectionHeading(title: 'Popular Product', onPressed: (){}),
-                SizedBox(height: TSizes.spaceBtwItems),
+                  //heading
+                  TSectionHeading(title: 'Popular Product', onPressed: () {}),
+                  SizedBox(height: TSizes.spaceBtwItems),
 
-                 //popular product
-                 TGridLayout(itemCount: 4, itemBuilder: (_, index) => TProductCardVertical()),
+                  //popular product
+                  SizedBox(
+                    height: 400,
+                    child: TGridLayout(
+                        itemCount: 1,
+                        itemBuilder: (_, index) => TProductCardVertical()),
+                  )
                 ],
               ),
             ),

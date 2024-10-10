@@ -4,26 +4,53 @@ import 'package:iconsax/iconsax.dart';
 import 'package:interior_coffee/common/styles/shadow.dart';
 import 'package:interior_coffee/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:interior_coffee/common/widgets/icon/circular_icon.dart';
-import 'package:interior_coffee/common/widgets/image/t_rounded_image.dart';
 import 'package:interior_coffee/common/widgets/text/product_price_text.dart';
 import 'package:interior_coffee/common/widgets/text/product_title_text.dart';
 import 'package:interior_coffee/common/widgets/text/t_merchat_title_with_verified_icon.dart';
-import 'package:interior_coffee/features/shop/screens/product_details/product_detail.dart';
 import 'package:interior_coffee/utils/constants/colors.dart';
-import 'package:interior_coffee/utils/constants/image_strings.dart';
 import 'package:interior_coffee/utils/constants/sizes.dart';
 import 'package:interior_coffee/utils/helpers/function_helper.dart';
+import 'package:interior_coffee/features/shop/controllers/product_controller.dart'; // Import ProductController
+import 'package:interior_coffee/features/shop/models/product_model.dart'; // Import Product Model
 
 class TProductCardVertical extends StatelessWidget {
-  const TProductCardVertical({super.key});
+  final ProductController productController = Get.put(ProductController());
 
   @override
   Widget build(BuildContext context) {
-
     final dark = THelperFunction.isDarkMode(context);
 
+    return Scaffold(
+      body: Obx(() {
+        if (productController.isLoading.value) {
+          return Center(child: CircularProgressIndicator());
+        }
+
+        if (productController.products.isEmpty) {
+          return Center(child: Text('No products found.'));
+        }
+
+        return GridView.builder(
+          padding: EdgeInsets.all(8),
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            crossAxisSpacing: 8,
+            mainAxisSpacing: 8,
+            childAspectRatio: 0.65,
+          ),
+          itemCount: productController.products.length,
+          itemBuilder: (context, index) {
+            Product product = productController.products[index];
+            return buildProductCard(context, product, dark);
+          },
+        );
+      }),
+    );
+  }
+
+  Widget buildProductCard(BuildContext context, Product product, bool dark) {
     return GestureDetector(
-      onTap: () => Get.to(() => ProductDetailScreen()),
+      onTap: () {},
       child: Container(
         width: 180,
         padding: EdgeInsets.all(1),
@@ -32,38 +59,37 @@ class TProductCardVertical extends StatelessWidget {
           borderRadius: BorderRadius.circular(TSizes.productImageRadius),
           color: dark ? TColors.darkerGrey : TColors.white,
         ),
-
-        //product list
         child: Column(
           children: [
-            //Thumbnail
             TRoundedContainer(
               height: 180,
               padding: EdgeInsets.all(TSizes.sm),
               backgroundColor: dark ? TColors.dark : TColors.light,
               child: Stack(
                 children: [
-                  //product image
-                  TRoundedImage(
-                      imageUrl: TImages.productImage1, applyImageRadius: true),
-
-                  //sale tag
-                  Positioned(
-                    top: 0,
-                    child: TRoundedContainer(
-                      radius: TSizes.sm,
-                      backgroundColor: TColors.secondary.withOpacity(0.8),
-                      padding: EdgeInsets.symmetric(
-                          horizontal: TSizes.sm, vertical: TSizes.xs),
-                      child: Text('25%',
-                          style: Theme.of(context)
-                              .textTheme
-                              .labelLarge!
-                              .apply(color: TColors.black)),
-                    ),
+                  Image.network(
+                    product.images.thumbnail,
+                    fit: BoxFit.cover,
+                    errorBuilder: (context, error, stackTrace) {
+                      return Image.asset(
+                          'https://gotrangtri.vn/wp-content/uploads/2023/12/Tu-tai-lieu-bang-go-thiet-ke-sang-trong.jpg'); // A local placeholder image
+                    },
                   ),
-
-                  //add to favourite
+                  if (product.discount > 0)
+                    Positioned(
+                      top: 0,
+                      child: TRoundedContainer(
+                        radius: TSizes.sm,
+                        backgroundColor: TColors.secondary.withOpacity(0.8),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: TSizes.sm, vertical: TSizes.xs),
+                        child: Text('${product.discount}%',
+                            style: Theme.of(context)
+                                .textTheme
+                                .labelLarge!
+                                .apply(color: TColors.black)),
+                      ),
+                    ),
                   Positioned(
                     top: 0,
                     right: 0,
@@ -74,30 +100,26 @@ class TProductCardVertical extends StatelessWidget {
               ),
             ),
             SizedBox(height: TSizes.spaceBtwItems / 2),
-
-            //product details
             Padding(
               padding: EdgeInsets.only(left: TSizes.sm),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  TProductTitleText(title: 'White Coffee Armchair', smallSize: true),
+                  TProductTitleText(
+                      title: product.productName, smallSize: true),
                   SizedBox(height: TSizes.spaceBtwItems / 2),
-                  TMerchatTitleWithVerifiedIcon(title: 'Zinus')
+                  TMerchatTitleWithVerifiedIcon(title: 'Zika'),
                 ],
               ),
             ),
-
             const Spacer(),
-
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                //price
                 Padding(
                   padding: EdgeInsets.only(left: TSizes.sm),
-                  child: TProductPriceText(price: '14.99')),
-
+                  child: TProductPriceText(price: '\$${product.sellingPrice}'),
+                ),
                 Container(
                   decoration: BoxDecoration(
                       color: dark ? TColors.dark : TColors.primary,
