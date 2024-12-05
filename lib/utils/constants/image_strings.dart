@@ -42,4 +42,8 @@ class TImages{
   static const String productImage1 = "assets/images/product/productImage1.png";
   static const String productImage2 = "assets/images/product/productImage2.png";
   static const String productImage3 = "assets/images/product/productImage3.png";
+
+  static const String vnpay = "assets/logos/Logo-VNPAY-QR-1.png";
+
+  static const String successfulIcon = "assets/logos/successful_payment_icon.png";
 }

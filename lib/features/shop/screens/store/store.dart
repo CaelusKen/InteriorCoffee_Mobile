@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:interior_coffee/common/widgets/appbar/appbar.dart';
 import 'package:interior_coffee/common/widgets/appbar/tabbar.dart';
 import 'package:interior_coffee/common/widgets/brands/brand_card.dart';
@@ -6,6 +7,7 @@ import 'package:interior_coffee/common/widgets/custom_shapes/containers/search_c
 import 'package:interior_coffee/common/widgets/layout/grid_layout.dart';
 import 'package:interior_coffee/common/widgets/products/cart/cart_menu_icon.dart';
 import 'package:interior_coffee/common/widgets/text/section_heading.dart';
+import 'package:interior_coffee/features/shop/screens/merchant/all_merchant.dart';
 import 'package:interior_coffee/features/shop/screens/store/widgets/category_tab.dart';
 import 'package:interior_coffee/utils/constants/colors.dart';
 import 'package:interior_coffee/utils/constants/sizes.dart';
@@ -46,7 +48,7 @@ class StoreScreen extends StatelessWidget {
                     SizedBox(height: TSizes.spaceBtwSections),
       
                     //featured merchant
-                    TSectionHeading(title: 'Featured Merchants', onPressed: (){}),
+                    TSectionHeading(title: 'Featured Merchants', onPressed: ()=> Get.to(()=> AllBrandsScreen())),
                     SizedBox(height: TSizes.spaceBtwItems / 1.5),
 
                     //merchant grid
@@ -64,7 +66,6 @@ class StoreScreen extends StatelessWidget {
                   Tab(child: Text('Sofa')),
                   Tab(child: Text('Table')),
                   Tab(child: Text('Chair')),
-                  Tab(child: Text('Light')),
                 ],
               ),
             ),
@@ -72,7 +73,6 @@ class StoreScreen extends StatelessWidget {
         }, 
         body: TabBarView(
           children: [
-            TCategoryTab(),
             TCategoryTab(),
             TCategoryTab(),
             TCategoryTab(),

@@ -35,7 +35,7 @@ class App extends StatelessWidget {
         outlinedButtonTheme: TOutlinedButton.darkOutlinedButtonTheme,
         inputDecorationTheme: TTextFieldTheme.darkInputDecorationTheme,
       ),
-      home: OnBoardingScreen(),
+      home: Scaffold(backgroundColor: TColors.primary, body: Center(child: CircularProgressIndicator(color: Colors.white))),
     );
   }
 }
